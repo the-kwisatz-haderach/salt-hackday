@@ -2,15 +2,16 @@
   "name": "my-secret-identity",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000",
+  "proxy": "https://localhost:8000",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-facebook-login": "^4.1.1",
     "react-router": "^5.0.1",
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "export HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

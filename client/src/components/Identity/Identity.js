@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Identity.css';
 
-const Identity = () => {
+const Identity = (props) => {
   const [identityState, setIdentityState] = useState(null);
   
     const getIdentity = () => {
@@ -30,6 +30,7 @@ const Identity = () => {
 
     return (
       <div>
+        {console.log(props)}
         <button onClick={getIdentity}>Generate identity</button>
         {identityState ? 
         <div>
