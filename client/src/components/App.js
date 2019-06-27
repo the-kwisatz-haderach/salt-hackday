@@ -62,7 +62,12 @@ function App() {
           <Route exact path="/" component={Home}></Route>
           <Route path="/login" component={Login}></Route>
           {userValues.authorized ? 
-          <Route path="/profile" component={Profile}></Route>
+          <Route 
+            path="/profile" 
+            render={(routeProps) => (
+              <Profile {...routeProps} {...userValues}/>
+            )}
+          />
           : <Redirect to="login"></Redirect>
           }
         </div>

@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Profile.css';
 
-function Profile() {
-  
+function Profile(props) {
+
+  // useEffect(() => {
+  //   fetch()
+  // }, [])
+
   return (
-    <h1>My profile</h1>
+    <div>
+      <img src={props.picture} alt="profile-pic"></img>
+      <h1>Welcome {props.name}</h1>
+      <ul>
+        <li>Test</li>
+      </ul>
+    </div>
   );
 }
 
