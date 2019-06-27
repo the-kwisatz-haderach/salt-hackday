@@ -1,0 +1,25 @@
+{
+  "name": "my-secret-identity",
+  "version": "1.0.0",
+  "description": "Simple app to generate secret identities. For whatever purpose...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "nodemon": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saltsthlm/salt-spring19-hackdayW09.git"
+  },
+  "author": "Gustaf Lundström",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saltsthlm/salt-spring19-hackdayW09/issues"
+  },
+  "homepage": "https://github.com/saltsthlm/salt-spring19-hackdayW09#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "faker": "^4.1.0"
+  }
+}
