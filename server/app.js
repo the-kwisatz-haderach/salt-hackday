@@ -17,8 +17,10 @@ app.get('/api/identity', async (req, res) => {
 });
 
 app.post('/api/identity', async (req, res) => {
+  const { userId } = req.body;
+  const { identity } = req.body;
   try {
-    await identityApi.saveIdentity(userId, req.body);
+    await identityApi.saveIdentity(userId, identity);
     res.end();
   } catch(err) {
     console.error(err);

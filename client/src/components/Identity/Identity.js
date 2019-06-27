@@ -8,7 +8,6 @@ const Identity = (props) => {
       fetch('/api/identity')
         .then(stream => stream.json())
         .then(data => {
-          console.log(data);
           setIdentityState(data);
         })
         .catch(error => {
@@ -16,13 +15,15 @@ const Identity = (props) => {
         });
     }
 
-    const saveIdentity = () => {
+    const saveIdentity = id => {
+      const reqBody = JSON.stringify({ userId: id, identity: identityState });
+
       fetch('/api/identity', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(identityState)
+        body: reqBody
       })
       .then(res => console.log(`Response ${res}`))
       .catch(err => console.error(err));
@@ -30,7 +31,6 @@ const Identity = (props) => {
 
     return (
       <div>
-        {console.log(props)}
         <button onClick={getIdentity}>Generate identity</button>
         {identityState ? 
         <div>
@@ -45,7 +45,7 @@ const Identity = (props) => {
             <li>Pet: {identityState.petName}</li>
             <li><img src={identityState.petPhoto} alt="pet-name"></img></li>
           </ul>
-          <button onClick={saveIdentity}>Save identity</button>
+          <button onClick={() => saveIdentity(props.userValues.id)}>Save identity</button>
         </div>
         : <></>
         }
