@@ -1,6 +1,5 @@
 import React from 'react';
 import Identity from '../Identity/Identity';
-import Login from '../Login/Login';
 import './Home.css';
 import { UserContext } from '../App';
 
@@ -13,7 +12,6 @@ function Home() {
       <UserContext.Consumer>
         {contextValues => <Identity userValues={contextValues}/>}
       </UserContext.Consumer>
-      <Login />
     </div>
   );
 }

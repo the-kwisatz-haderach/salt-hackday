@@ -1,6 +1,10 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import './App.css';
 import Home from './Home/Home';
+import Profile from './Profile/Profile';
+import Login from './Login/Login';
+import Navigation from './Navigation/Navigation';
   
 export const UserContext = createContext({
   authorized: false,
@@ -51,11 +55,19 @@ function App() {
   }, [userValues]);
 
   return (
-    <div className="App">
+    <BrowserRouter>
       <UserContext.Provider value={userValues}>
-        <Home />
+        <div className="App">
+          <Navigation />
+          <Route exact path="/" component={Home}></Route>
+          <Route path="/login" component={Login}></Route>
+          {userValues.authorized ? 
+          <Route path="/profile" component={Profile}></Route>
+          : <Redirect to="login"></Redirect>
+          }
+        </div>
       </UserContext.Provider>
-    </div>
+    </BrowserRouter>
   );
 }
 
