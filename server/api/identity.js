@@ -24,11 +24,20 @@ const createIdentity = () => {
   })
 }
 
-const saveIdentity = async identityObj => {
-  await fsPromises.writeFile(path.join(dbPath, identityObj.id, '.json'), JSON.stringify(identityObj));
-  return identityObj.id;
+const saveIdentity = async (userId, identityObj) => {
+  try {
+    const userFile = await fsPromises.readFile(path.join(dbPath, userId + '.json'));
+    const newData = JSON.parse(userFile);
+    newData.identities.push(identityObj);
+    fsPromises.writeFile(path.join(dbPath, userId + '.json'), JSON.stringify(newData));
+  } catch(err) {
+    if (err.code === 'ENOENT') {
+      const identities = { identities: [identityObj] };
+      fsPromises.writeFile(path.join(dbPath, userId + '.json'), JSON.stringify(identities));
+      return;
+    }
+    console.error(err);
+  }
 }
-
-// saveIdentity(testId);
 
 module.exports = { createIdentity, saveIdentity };
