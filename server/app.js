@@ -18,18 +18,8 @@ app.get('/api/identity', async (req, res) => {
 
 app.post('/api/identity', async (req, res) => {
   try {
-    await identityApi.saveIdentity('9836fa3e-2e4b-4439-b358-86a1224db113', req.body);
+    await identityApi.saveIdentity(userId, req.body);
     res.end();
-  } catch(err) {
-    console.error(err);
-    res.end();
-  }
-});
-
-app.post('/api/user', async (req, res) => {
-  try {
-    const userId = await userApi.createUser();
-    res.send(userId);
   } catch(err) {
     console.error(err);
     res.end();

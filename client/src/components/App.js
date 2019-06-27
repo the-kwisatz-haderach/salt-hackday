@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import './App.css';
 import Home from './Home/Home';
   
@@ -10,7 +10,21 @@ export const UserContext = createContext({
 });
 
 function App() {
-  const [userState, setUserState] = useState(null);
+  const [userIdState, setUserIdState] = useState(null);
+
+  const userStatus = () => {
+    fetch('/api/user')
+    .then(id => {
+      setUserIdState(id);
+    })
+    .catch(err => {
+      console.error(err);
+    })
+  }
+
+  useEffect(() => {
+    
+  }, []);
 
   return (
     <div className="App">
