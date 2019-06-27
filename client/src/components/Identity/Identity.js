@@ -25,7 +25,6 @@ const Identity = (props) => {
         },
         body: reqBody
       })
-      .then(res => console.log(`Response ${res}`))
       .catch(err => console.error(err));
     }
 

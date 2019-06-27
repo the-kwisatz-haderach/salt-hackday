@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { identityApi, userApi } = require('./api');
+const { identityApi } = require('./api');
 
 const app = express();
 
@@ -22,6 +22,16 @@ app.post('/api/identity', async (req, res) => {
   try {
     await identityApi.saveIdentity(userId, identity);
     res.end();
+  } catch(err) {
+    console.error(err);
+    res.end();
+  }
+});
+
+app.get('/api/identity/:id', async (req, res) => {
+  try {
+    const { identities } = await identityApi.getUserIdentities(req.params.id);
+    res.json(identities);
   } catch(err) {
     console.error(err);
     res.end();

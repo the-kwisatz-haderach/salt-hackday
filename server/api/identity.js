@@ -37,7 +37,18 @@ const saveIdentity = async (userId, identityObj) => {
       return;
     }
     console.error(err);
+    return new Error(err);
   }
 }
 
-module.exports = { createIdentity, saveIdentity };
+const getUserIdentities = async userId => {
+  try {
+    const userFile = await fsPromises.readFile(path.join(dbPath, userId + '.json'));
+    return JSON.parse(userFile);
+  } catch(err) {
+    console.error(err);
+    return new Error(err);
+  }
+}
+
+module.exports = { createIdentity, saveIdentity, getUserIdentities };
