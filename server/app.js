@@ -11,4 +11,9 @@ app.get('/api/identity', async (req, res) => {
   res.send(JSON.stringify(identity));
 });
 
+app.post('/api/identity', async (req, res) => {
+  const id = await api.saveIdentity(req.body);
+  res.send(id);
+});
+
 module.exports = { app };

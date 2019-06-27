@@ -16,8 +16,16 @@ const Identity = () => {
         });
     }
 
-    const saveIdentity = identityState => {
-      
+    const saveIdentity = () => {
+      fetch('/api/identity', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(identityState)
+      })
+      .then(res => console.log(`Response ${res}`))
+      .catch(err => console.error(err));
     }
 
     return (
