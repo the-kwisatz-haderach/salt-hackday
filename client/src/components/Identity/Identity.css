@@ -8,6 +8,12 @@
   background-color: var(--primary);
   padding: 15px 25px;
   border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-out;
+}
+
+.button:hover {
+  background-color: var(--primary-dark);
 }
 
 .button--green {
@@ -20,6 +26,12 @@
   border: none;
   margin-top: 30px;
   font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.2s ease-out;
+}
+
+.button--green:hover {
+  background-color: #168f16;
 }
 
 .button__icon--white {
@@ -45,18 +57,18 @@
   font-size: 2.8rem;
   background-color: var(--primary);
   color: white;
-  padding: 25px 10px;
+  padding: 25px 20px;
   width: 100%;
 }
 
 .identity-card {
-  border-top: 3px solid #4a00001a;
   width: 80%;
   margin: auto;
 }
 
 .identity-block {
   padding: 30px 20px;
+  text-align: center;
 }
 
 .identity-block:nth-child(odd) {
@@ -76,13 +88,45 @@
 
 .identity-card__image {
   margin-top: 5px;
-  width: 80%;
+  width: 70vw;
+  max-width: 400px;
   border-radius: 3%;
+}
+
+.--no-underline {
+  text-decoration: none;
+  padding: 40px 0px;
 }
 
 @media only screen and (min-width: 768px) {  
   .identity__intro {
     font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {  
+  .identity {
+    padding: 80px 0;
+  }
+
+  .identity-card__row {
+    font-size: 1.8rem;
+  }
+
+  .identity__intro {
+    font-size: 2.5rem;
+  }
+
+  .button {
+    font-size: 2rem;
+    padding: 15px 25px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .identity__intro {
+    font-size: 3rem;
     margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 }

@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, withRouter } from 'react-router-dom';
 import './App.css';
 import Home from './Home/Home';
 import Profile from './Profile/Profile';
@@ -59,7 +59,12 @@ function App() {
       <UserContext.Provider value={userValues}>
         <div className="App">
           <Navigation />
-          <Route exact path="/" component={Home}></Route>
+          <Route 
+            exact path="/" 
+            render={(routeProps) => (
+              <Home {...routeProps} {...userValues}/>
+            )}
+          />
           <Route path="/login" component={Login}></Route>
           <Route 
             path="/profile" 

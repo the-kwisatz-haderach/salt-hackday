@@ -6,16 +6,21 @@ import './Login.css';
 function Login() {
   
   return (
-    <UserContext.Consumer>
-      {({authorized}) =>
-      authorized ? 
-      <h2>You are authorized!</h2>
-      :
-      <div>
-        <Facebook />
-      </div>
-      }
-    </UserContext.Consumer>
+    <div className="login-container">
+      <UserContext.Consumer>
+          {({authorized}) =>
+          authorized ? 
+          <h2 className="login__heading"><span className="emoji">👍</span><br/>You are authorized!</h2>
+          :
+          <div className="login">
+            <h1 className="login__heading">Please login to save your identities.</h1>
+            <div className="login__button">
+              <Facebook />
+            </div>
+          </div>
+          }
+      </UserContext.Consumer>
+    </div>
   );
 }
 

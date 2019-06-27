@@ -1,0 +1,26 @@
+.login-container {
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.login__heading {
+  font-size: 3.6rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.emoji {
+  font-size: 10rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .login__heading {
+    font-size: 4.5rem;
+  }
+
+  .emoji {
+    font-size: 15rem;
+  }
+}
