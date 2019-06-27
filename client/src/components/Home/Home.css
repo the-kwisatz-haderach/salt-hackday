@@ -1,6 +1,5 @@
 .home {
   margin: auto;
-  margin-top: 50px;
   text-align: center;
   line-height: 1.4;
 }
@@ -16,9 +15,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .home {
-    margin-top: 80px;
-  }
 
   .home__title {
     font-size: 4.5rem;

@@ -1,24 +1,36 @@
 .header {
   margin: auto;
-  margin-top: 50px;
   text-align: center;
-  width: 90%;
+  width: 100%;
   line-height: 1.4;
+  background-image: linear-gradient(to bottom, #4a0000, rgba(13, 52, 78, 0.49), rgb(124, 14, 39)), url('/identity-bg.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 120px;
+  animation: background-movement 15s ease-in-out 0s infinite;
 }
 
 .header__title {
+  color: white;
   font-size: 3.6rem;
-  margin-bottom: 50px;
+  margin: auto;
+  width: 90%;
 }
 
 .header__title--colored {
   color: var(--primary-light);
+  margin: auto;
   font-size: 2.6rem;
+  width: 90%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--primary-dark);
 }
 
 @media only screen and (min-width: 768px) {
   .header {
-    margin-top: 80px;
+    padding: 150px;
   }
 
   .header__title {
@@ -34,5 +46,20 @@
   .header__title--colored {
     color: var(--primary-light);
     font-size: 4rem;
+  }
+}
+
+@keyframes background-movement {
+  0% {
+    background-position: 50% 0%
+  }
+  33% {
+    background-position: 100% 50%
+  }
+  66% {
+    background-position: 0% 100%
+  }
+  100% {
+    background-position: 50% 0%
   }
 }

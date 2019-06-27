@@ -1,11 +1,14 @@
 import React from 'react';
 import Facebook from '../Facebook';
+import Header from '../Header/Header';
 import { UserContext } from '../App';
 import './Login.css';
 
 function Login() {
   
   return (
+    <>
+    <Header />
     <div className="login-container">
       <UserContext.Consumer>
           {({authorized}) =>
@@ -21,6 +24,7 @@ function Login() {
           }
       </UserContext.Consumer>
     </div>
+    </> 
   );
 }
 

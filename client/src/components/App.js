@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { BrowserRouter, Route, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import Home from './Home/Home';
 import Profile from './Profile/Profile';
