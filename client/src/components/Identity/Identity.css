@@ -1,0 +1,88 @@
+.identity {
+  background-color: var(--accent-grey);
+  padding: 30px 0;
+}
+
+.button {
+  color: white;
+  background-color: var(--primary);
+  padding: 15px 25px;
+  border: none;
+}
+
+.button--green {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #35b135;
+  padding: 15px 25px;
+  border: none;
+  margin-top: 30px;
+  font-size: 2rem;
+}
+
+.button__icon--white {
+  width: 50px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.identity__intro {
+  font-size: 2rem;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.identity-container {
+  display: flex;
+  flex-flow: column wrap;
+  overflow: hidden;
+}
+
+.identity-card__title {
+  font-size: 2.8rem;
+  background-color: var(--primary);
+  color: white;
+  padding: 25px 10px;
+  width: 100%;
+}
+
+.identity-card {
+  border-top: 3px solid #4a00001a;
+  width: 80%;
+  margin: auto;
+}
+
+.identity-block {
+  padding: 30px 20px;
+}
+
+.identity-block:nth-child(odd) {
+  background-color: var(--primary-dark);
+  color: white;
+  margin-top: 25px;
+}
+
+.identity-block:last-child {
+  border-bottom: none;
+}
+
+.identity-card__row {
+  margin-top: 20px;
+  font-size: 1.4rem;
+}
+
+.identity-card__image {
+  margin-top: 5px;
+  width: 80%;
+  border-radius: 3%;
+}
+
+@media only screen and (min-width: 768px) {  
+  .identity__intro {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+}

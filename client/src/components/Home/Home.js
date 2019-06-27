@@ -1,14 +1,14 @@
 import React from 'react';
 import Identity from '../Identity/Identity';
+import Header from '../Header/Header';
 import './Home.css';
 import { UserContext } from '../App';
 
 function Home() {
   
   return (
-    <div>
-      <h1>Welcome</h1>
-      <p>Your new identity is just a click away!</p>
+    <div className="home">
+      <Header />
       <UserContext.Consumer>
         {contextValues => <Identity userValues={contextValues}/>}
       </UserContext.Consumer>

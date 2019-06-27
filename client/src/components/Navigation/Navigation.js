@@ -6,21 +6,17 @@ import { UserContext } from '../App';
 function Navigation() {
   
   return (
-    <nav>
+    <nav className="main-nav">
       <UserContext.Consumer>
         {({authorized, signoutUser}) => authorized ?
         <>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/profile">My identities</Link></li>
-            <li><button onClick={signoutUser}>Sign out</button></li>
-          </ul>
+          <Link className="main-nav__link" to="/">Home</Link>
+          <Link className="main-nav__link" to="/profile">Profile</Link>
+          <button className="main-nav__link button" onClick={signoutUser}>Sign out</button>
         </> :
         <>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/login">Login</Link></li>
-          </ul>
+          <Link className="main-nav__link" to="/">Home</Link>
+          <Link className="main-nav__link" to="/login">Login</Link>
         </>
         }
       </UserContext.Consumer>

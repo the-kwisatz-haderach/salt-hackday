@@ -29,22 +29,30 @@ const Identity = (props) => {
     }
 
     return (
-      <div>
-        <button onClick={getIdentity}>Generate identity</button>
+      <div className="identity">
+        <p className="identity__intro">Your new identity is just a click away!</p>
+        <button className="button" onClick={getIdentity}>Generate identity</button>
         {identityState ? 
-        <div>
-          <ul>
-            <li>Name: {identityState.firstName} {identityState.lastName}</li>
-            <li>Birthdate: {identityState.birthdate}</li>
-            <li>From: {identityState.birthplace}</li>
-            <li>Current locale: {identityState.city}</li>
-            <li>Occupation: {identityState.jobTitle}</li>
-            <li>Spouse: {identityState.spouseName}</li>
-            <li>Number of kids: {identityState.amountKids}</li>
-            <li>Pet: {identityState.petName}</li>
-            <li><img src={identityState.petPhoto} alt="pet-name"></img></li>
+        <div className="identity-container">
+          <ul className="identity-card">
+            <li className="identity-card__row"><span className="--bold">Name:</span> {identityState.firstName} {identityState.lastName}</li>
+            <li className="identity-card__row"><span className="--bold">Birthdate:</span> {identityState.birthdate}</li>
+            <li className="identity-card__row"><span className="--bold">From:</span> {identityState.birthplace}</li>
+            <li className="identity-card__row"><span className="--bold">Current locale:</span> {identityState.city}</li>
+            <li className="identity-card__row"><span className="--bold">Occupation:</span> {identityState.jobTitle}</li>
+            <li className="identity-card__row"><span className="--bold">Spouse:</span> {identityState.spouseName}</li>
+            <li className="identity-card__row"><span className="--bold">Number of kids:</span> {identityState.amountKids}</li>
+            <div className="identity-card__row">
+              <li><span className="--bold">Pet:</span> {identityState.petName}</li>
+              <li><img className="identity-card__image" src={identityState.petPhoto} alt="pet-name"></img></li>
+            </div>
           </ul>
-          <button onClick={() => saveIdentity(props.userValues.id)}>Save identity</button>
+          <button className="button--green" onClick={() => saveIdentity(props.userValues.id)}>
+            <object type="image/svg+xml" data="/card.svg" className="button__icon--white" alt="identity-icon">
+              SVG not supported.
+            </object>
+            Save identity
+          </button>
         </div>
         : <></>
         }

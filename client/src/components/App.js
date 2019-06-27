@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import Home from './Home/Home';
 import Profile from './Profile/Profile';
@@ -61,15 +61,12 @@ function App() {
           <Navigation />
           <Route exact path="/" component={Home}></Route>
           <Route path="/login" component={Login}></Route>
-          {userValues.authorized ? 
           <Route 
             path="/profile" 
             render={(routeProps) => (
               <Profile {...routeProps} {...userValues}/>
             )}
           />
-          : <Redirect to="login"></Redirect>
-          }
         </div>
       </UserContext.Provider>
     </BrowserRouter>
@@ -77,3 +74,14 @@ function App() {
 }
 
 export default App;
+
+
+// {userValues.authorized ? 
+//   <Route 
+//     path="/profile" 
+//     render={(routeProps) => (
+//       <Profile {...routeProps} {...userValues}/>
+//     )}
+//   />
+//   : <Redirect to="login"></Redirect>
+//   }
