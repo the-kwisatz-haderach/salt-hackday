@@ -16,21 +16,28 @@ const Identity = () => {
         });
     }
 
+    const saveIdentity = identityState => {
+      
+    }
+
     return (
       <div>
         <button onClick={getIdentity}>Generate identity</button>
         {identityState ? 
-        <ul>
-          <li>Name: {identityState.firstName} {identityState.lastName}</li>
-          <li>Birthdate: {identityState.birthdate}</li>
-          <li>From: {identityState.birthplace}</li>
-          <li>Current locale: {identityState.city}</li>
-          <li>Occupation: {identityState.jobTitle}</li>
-          <li>Spouse: {identityState.spouseName}</li>
-          <li>Number of kids: {identityState.amountKids}</li>
-          <li>Pet: {identityState.petName}</li>
-          <li><img src={identityState.petPhoto} alt="pet-name"></img></li>
-        </ul>
+        <div>
+          <ul>
+            <li>Name: {identityState.firstName} {identityState.lastName}</li>
+            <li>Birthdate: {identityState.birthdate}</li>
+            <li>From: {identityState.birthplace}</li>
+            <li>Current locale: {identityState.city}</li>
+            <li>Occupation: {identityState.jobTitle}</li>
+            <li>Spouse: {identityState.spouseName}</li>
+            <li>Number of kids: {identityState.amountKids}</li>
+            <li>Pet: {identityState.petName}</li>
+            <li><img src={identityState.petPhoto} alt="pet-name"></img></li>
+          </ul>
+          <button onClick={saveIdentity}>Save identity</button>
+        </div>
         : <></>
         }
       </div>
