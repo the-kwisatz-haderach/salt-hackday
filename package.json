@@ -4,7 +4,8 @@
   "description": "Simple app to generate secret identities. For whatever purpose...",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run start-client && node ./server/index.js",
+    "start-client": "cd ./client && npm run start"
   },
   "repository": {
     "type": "git",

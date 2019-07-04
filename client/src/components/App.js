@@ -79,14 +79,3 @@ function App() {
 }
 
 export default App;
-
-
-// {userValues.authorized ? 
-//   <Route 
-//     path="/profile" 
-//     render={(routeProps) => (
-//       <Profile {...routeProps} {...userValues}/>
-//     )}
-//   />
-//   : <Redirect to="login"></Redirect>
-//   }
